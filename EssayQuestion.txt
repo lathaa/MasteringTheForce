@@ -151,7 +151,7 @@ console.log(main());
 	1	Romeo	1000	Surabaya
 	2	Julia	3000	Ho chi min
 	3	Robert	2000	Hongkong
-	….			
+	â€¦.			
 	100	Deniro	5000	Singapore
 
 	(total record = 100)
@@ -165,4 +165,11 @@ console.log(main());
    		  The number of customer that live in singapore=6. 
       		  So in this example the output should be all customer that live in Singapore and Hongkong only. 
 
-
+5.a 
+    SELECT * FROM Customer WHERE Salary between 2000 AND 3500
+    
+5.b 
+    SELECT c*. FROM Customer c JOIN 
+    (SELECT City,Count(*) as Count FROM Customer GROUP BY City) c1
+     HAVING Count(*) >=6
+     ON c.City = c1.City
